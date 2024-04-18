@@ -12,17 +12,24 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        BasicConfigurator.configure();
-        LOGGER.setLevel(Level.ALL);
+  //     BasicConfigurator.configure();
+  //     LOGGER.setLevel(Level.ALL);
 
         Scanner scanner = new Scanner("10");
         int number = scanner.nextInt();
+        for (int i = 0; i < 100000; i++) {
+            long result = factorial(number);
 
-        long result = factorial(number);
+            String msg = String.format("%d! = %d", number, result);
 
-        String msg = String.format("d%! = %d", number, result);
+            LOGGER.info(msg);
+        }
 
-        LOGGER.info(msg);
+   //     long result = factorial(number);
+//
+   //     String msg = String.format("%d! = %d", number, result);
+//
+   //     LOGGER.info(msg);
 
   //      LOGGER.trace("call trace method...");
   //      LOGGER.debug("call debug method...");
